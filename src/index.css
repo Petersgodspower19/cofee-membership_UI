@@ -1,0 +1,258 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  
+}
+:root{
+  --bg-color: #0c0c0c;
+  --text-color: #fff;
+  --main-color: #ae8957;
+  --big-font: 6rem;
+}
+
+body{
+  background-color: var(--bg-color);
+  background-image: url(../src/assets/bg.png);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.sideBar{
+  position: absolute;
+  width: 100%;
+  padding: 100px 50px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(32px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 1001;
+}
+.fade-out {
+  transform: translateX(100%); 
+  opacity: 0; 
+}
+.sideBar .nav-list{
+  flex-direction: column;
+  align-items: start;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.sideBar a{
+  color: var(--text-color);
+  font-size: 40px;
+}
+.sideBar button{
+  background-color: inherit;
+  border-radius: 5px;
+  width: 100px;
+  font-weight: 500;
+  padding: 5px;
+  height: 30px;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  transition: all .6s ease;
+}
+.sideBar button:hover{
+  transform: translateY(-5px);
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  cursor: pointer;
+}
+header #logo{
+  width: 10%;
+}
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.2rem;
+  transition: all .50s ease;
+}
+header i{
+  border-radius: 0;
+  border: none;
+}
+
+header a{
+  color: var(--text-color);
+  font-size: 30px;
+}
+header .menu{
+  display: none;
+}
+.nav-list{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+  transition: all .6s ease;
+}
+.nav-list li:hover{
+  color: var(--main-color);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+header button{
+  background-color: inherit;
+  border-radius: 5px;
+  width: 100px;
+  font-weight: 500;
+  padding: 5px;
+  height: 30px;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  transition: all .6s ease;
+}
+header button:hover{
+  transform: translateY(-5px);
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+main{
+  padding: 0.2rem 4rem;
+  /* margin-top: 3rem; */
+  color: var(--text-color);
+  display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
+  align-items: center;
+  justify-content: space-around;
+  margin-top: -2rem;
+  /* margin-bottom: 2rem; */
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.left-section{
+  height: auto;
+}
+.left-section .socials{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2rem;
+}
+.left-section .socials a{
+  color: var(--text-color);
+}
+/* .left-section .socials a:hover{
+  
+} */
+main i{
+  border-radius: 50%;
+  padding: 5px;
+  border: 2px solid var(--text-color);
+}
+main i:hover{
+  transform: translateY(-5px);
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  cursor: pointer;
+  border-radius: 50%;
+}
+.left-section h4{
+  /* margin-top: 2rem; */
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.left-section h1{
+  font-size: var(--big-font);
+}
+.left-section p{
+  font-size: 15px;
+}
+.left-section .pricing{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pricing button{
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border-radius: 5px;
+  width: 100px;
+  font-weight: 500;
+  padding: 5px;
+  height: 30px;
+  border: none;
+}
+.pricing button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+
+}
+#regular{
+  color: var(--main-color);
+}
+
+.right-section img {
+  width: 100%;
+  height: 100%;
+  /* margin-top: -2rem; */
+}
+.scroll{
+  padding: 10px 2rem;
+  position: absolute;
+  right: 10px;
+  margin-top: -1.5rem;
+}
+.scroll a{
+  color: var(--text-color);
+}
+
+@media(max-width:1250px) {
+  .left-section h1{
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  main {
+    margin-top: 2rem;
+  }
+}
+
+@media(max-width:650px){
+  header .menu{
+    display: block;
+  }
+  header button{
+    display: none;
+  }
+  header .nav-list{
+    display: none;
+  }
+  .scroll{
+    display: none;
+  }
+  main{
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+  .left-section h1{
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+@media(max-width:480px) {
+  
+  .left-section h1{
+    font-size: 1rem;
+  }
+  header {
+    padding: 1rem 0.8rem;
+  }
+
+  
+}
